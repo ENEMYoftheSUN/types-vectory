@@ -1,4 +1,4 @@
-Typescreipt types for Vector class.
+Typescript types for Vector class.
 Work in progress.
 
 Original class by broadsw0rd :
