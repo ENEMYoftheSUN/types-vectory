@@ -9,21 +9,24 @@ export default class Vector
 		 * @param [x=0]
 		 * @param [y=0]
 		 */
-		constructor (x: number, y: number);
+		constructor (x?: number, y?: number);
 
 
 		/**
 		 * Distance between one and another vector
 		 *
-		 * @param one
-		 * @param another
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {number}
 		 */
 		static distance (one: Vector, another: Vector): number;
 
 
 		/**
 		 * Create a new vector from an array of numbers
-		 * @param data
+		 *
+		 * @param {number[]} data
+		 * @return {Vector}
 		 */
 		static from (data: number[]): Vector;
 
@@ -31,8 +34,9 @@ export default class Vector
 		/**
 		 * Create a new vector based on angle and magnitude
 		 *
-		 * @param angle
-		 * @param magnitude
+		 * @param {number} angle
+		 * @param {number} magnitude
+		 * @return {Vector}
 		 */
 		static fromAngle (angle: number, magnitude: number): Vector
 
@@ -40,8 +44,9 @@ export default class Vector
 		/**
 		 * Create a new vector based on a string (x and y are separeted by a comma)
 		 * Ex: Vector.parse ("2, 3.14") // new Vector (2, 3.14)
-		 *
-		 * @param string
+
+		 * @param {string} string
+		 * @return {Vector}
 		 */
 		static parse (string: string): Vector;
 
@@ -49,8 +54,9 @@ export default class Vector
 		/**
 		 * Adds another to one. Returns a new vector.
 		 *
-		 * @param one
-		 * @param another
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {Vector}
 		 */
 		static add (one: Vector, another: Vector): Vector;
 
@@ -58,8 +64,9 @@ export default class Vector
 		/**
 		 * Adds another to one. Vector another is modified directly.
 		 *
-		 * @param one
-		 * @param another
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {Vector}
 		 */
 		static iadd (one: Vector, another: Vector): Vector;
 
@@ -67,8 +74,9 @@ export default class Vector
 		/**
 		 * Substracts another to one. Returns a new vector.
 		 *
-		 * @param one
-		 * @param another
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {Vector}
 		 */
 		static sub (one: Vector, another: Vector): Vector;
 
@@ -76,8 +84,9 @@ export default class Vector
 		/**
 		 * Substracts another to one. Vector another is modified directly.
 		 *
-		 * @param one
-		 * @param another
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {Vector}
 		 */
 		static isub (one: Vector, another: Vector): Vector;
 
@@ -85,8 +94,9 @@ export default class Vector
 		/**
 		 * Multiplies vector by scalar. Returns a new vector.
 		 *
-		 * @param scala
-		 * @param another
+		 * @param {number} scalar
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static mul (scalar: number, vector: Vector): Vector;
 
@@ -94,8 +104,9 @@ export default class Vector
 		/**
 		 * Multiplies vector by scalar. Vector vector is modified directly.
 		 *
-		 * @param scala
-		 * @param another
+		 * @param {number} scalar
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static imul (scalar: number, vector: Vector): Vector;
 
@@ -103,8 +114,9 @@ export default class Vector
 		/**
 		 * Divivides vector by scalar. Returns a new vector.
 		 *
-		 * @param scala
-		 * @param another
+		 * @param {number} scalar
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static div (scalar: number, vector: Vector): Vector;
 
@@ -112,8 +124,9 @@ export default class Vector
 		/**
 		 * Divides vector by scalar. Vector vector is modified directly.
 		 *
-		 * @param scala
-		 * @param another
+		 * @param {number} scalar
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static idiv (scalar: number, vector: Vector): Vector;
 
@@ -121,9 +134,10 @@ export default class Vector
 		/**
 		 * Lineary interpolates another with one by factor t. Returns a new vector.
 		 *
-		 * @param one
-		 * @param another
-		 * @param t        value between 0 and 1
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @param {number} t 0..1
+		 * @return {Vector}
 		 */
 		static lerp (one: Vector, another: Vector, t: number): Vector;
 
@@ -131,7 +145,8 @@ export default class Vector
 		/**
 		 * Returns a new normalized vector for vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static normalized (vector: Vector): Vector;
 
@@ -139,51 +154,66 @@ export default class Vector
 		/**
 		 * Normalizes vector. Vector vector is modified directly.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static normalize (vector: Vector): Vector;
 
 
 		/**
 		 * Returns vector's magnitude (length).
-		 * @param vector
+		 *
+		 * @param {Vector} vector
+		 * @return {number}
 		 */
 		static magnitude (vector: Vector): number;
 
 
 		/**
 		 * Returns dot product between one and another.
-		 * @param vector
+		 *
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {number}
 		 */
 		static dot (one: Vector, another: Vector): number;
 
 
 		/**
 		 * Returns angle (radians) of vector.
-		 * @param vector
+		 *
+		 * @param {Vector} vector
+		 * @return {number}
 		 */
 		static angleOf (vector: Vector): number;
 
 
 		/**
 		 * Returns angle (radians) between one and another.
-		 * @param vector
+		 *
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {number}
 		 */
 		static angleTo (one: Vector, another: Vector): number;
 
 
 		/**
 		 * Rotates vector by theta angle. Returns a new vector.
-		 * @param theta
-		 * @param vector
+		 *
+		 * @param {number} theta
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static rotate (theta: number, vector: Vector): Vector;
 
 
 		/**
 		 * Rotates vector by theta angle. Modifies vector directly.
-		 * @param theta
-		 * @param vector
+		 *
+		 * @param {number} theta
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static irotate (theta: number, vector: Vector): Vector;
 
@@ -191,8 +221,9 @@ export default class Vector
 		/**
 		 * Reset another vector with one values. Returns a new vector.
 		 *
-		 * @param one
-		 * @param another
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {Vector}
 		 */
 		static reset (one: Vector, another: Vector): Vector;
 
@@ -200,7 +231,8 @@ export default class Vector
 		/**
 		 * Reset vector to 0 (origin). Returns a new vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		static zero (vector: Vector): Vector;
 
@@ -208,17 +240,21 @@ export default class Vector
 		/**
 		 * Set vector X et Y values. Returns a new vector.
 		 *
-		 * @param [x=0]
-		 * @param [y=0]
-		 * @param vector
+		 * @param {number} [x = 0]
+		 * @param {number} [y = 0]
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
-		static set (x: number, y: number, vector: Vector): Vector;
+		static set (x?: number, y?: number, vector?: Vector): Vector;
 
 
 		/**
 		 * Returns a new vector copied from vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
+		 * @name copy
+		 * @alias clone
 		 */
 		static copy (vector: Vector): Vector;
 
@@ -226,23 +262,45 @@ export default class Vector
 		/**
 		 * Returns a JSON representation of vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {number[]}
 		 */
 		static toJSON (vector: Vector): number[];
 
 
 		/**
-		 * Returns string representation of vector.
+		 * Returns a string representation of vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {string}
 		 */
 		static toString (vector: Vector): string;
 
 
 		/**
+		 * Returns an array representation of vector.
+		 *
+		 * @param {Vector} vector
+		 * @return {number[]}
+		 */
+		static toArray (vector: Vector): number[];
+
+
+		/**
+		 * Returns true if one and another magnitude (length) are equal.
+		 *
+		 * @param {Vector} one
+		 * @param {Vector} another
+		 * @return {boolean}
+		 */
+		static compare (one: Vector, another: Vector): boolean;
+
+
+		/**
 		 * Distance between current and another vector
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {number}
 		 */
 		distance (vector: Vector): number;
 
@@ -250,7 +308,8 @@ export default class Vector
 		/**
 		 * Adds vector to current. Returns a new vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		add (vector: Vector): Vector;
 
@@ -258,7 +317,8 @@ export default class Vector
 		/**
 		 * Adds vector to current. Current vector is modified directly.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		iadd (vector: Vector): Vector;
 
@@ -266,7 +326,8 @@ export default class Vector
 		/**
 		 * Substracts vector to current. Returns a new vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		sub (vector: Vector): Vector;
 
@@ -274,7 +335,8 @@ export default class Vector
 		/**
 		 * Substracts vector to current. Current vector is modified directly.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		isub (vector: Vector): Vector;
 
@@ -282,46 +344,53 @@ export default class Vector
 		/**
 		 * Multiplies vector by scalar. Returns a new vector.
 		 *
-		 * @param scalar
+		 * @param {number} scalar
+		 * @return {Vector}
 		 */
-		mul (scalar: Vector): Vector;
+		mul (scalar: number): Vector;
 
 
 		/**
 		 * Multiplies vector by scalar. Current vector is modified directly.
 		 *
-		 * @param scalar
+		 * @param {number} scalar
+		 * @return {Vector}
 		 */
-		imul (scalar: Vector): Vector;
+		imul (scalar: number): Vector;
 
 
 		/**
 		 * Divides vector by scalar. Returns a new vector.
 		 *
-		 * @param scalar
+		 * @param {number} scalar
+		 * @return {Vector}
 		 */
-		div (scalar: Vector): Vector;
+		div (scalar: number): Vector;
 
 
 		/**
 		 * Divides vector by scalar. Current vector is modified directly.
 		 *
-		 * @param scalar
+		 * @param {number} scalar
+		 * @return {Vector}
 		 */
-		idiv (scalar: Vector): Vector;
+		idiv (scalar: number): Vector;
 
 
 		/**
 		 * Lineary interpolates another with current by factor t. Returns a new vector.
 		 *
-		 * @param vector
-		 * @param t        value between 0 and 1
+		 * @param {Vector} vector
+		 * @param {number} t 0..1
+		 * @return {Vector}
 		 */
 		lerp (vector: Vector, t: number): Vector;
 
 
 		/**
 		 * Returns a normalized vector for current vector.
+		 *
+		 * @return {Vector}
 		 */
 		normalized (): Vector;
 
@@ -329,13 +398,15 @@ export default class Vector
 		/**
 		 * Normalizes current vector which is modified directly.
 		 *
-		 * @param vector
+		 * @return {Vector}
 		 */
 		normalize (): Vector;
 
 
 		/**
 		 * Returns current vector's magnitude (length).
+		 *
+		 * @return {number}
 		 */
 		magnitude (): number;
 
@@ -343,13 +414,16 @@ export default class Vector
 		/**
 		 * Returns dot product current and vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {number}
 		 */
 		dot (vector: Vector): number;
 
 
 		/**
 		 * Returns angle (radians) of current vector.
+		 *
+		 * @return {number}
 		 */
 		angleOf (): number;
 
@@ -357,7 +431,8 @@ export default class Vector
 		/**
 		 * Returns angle (radians) between vector and current.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {number}
 		 */
 		angleTo (vector: Vector): number;
 
@@ -365,7 +440,8 @@ export default class Vector
 		/**
 		 * Rotates current vector by theta angle. Returns a new vector.
 		 *
-		 * @param theta
+		 * @param {number} theta
+		 * @return {Vector}
 		 */
 		rotate (theta: number): Vector;
 
@@ -373,8 +449,8 @@ export default class Vector
 		/**
 		 * Rotates current vector by theta angle. Current vector is modified.
 		 *
-		 * @param theta
-		 *
+		 * @param {number} theta
+		 * @return {Vector}
 		 */
 		irotate (theta: number): Vector;
 
@@ -382,13 +458,16 @@ export default class Vector
 		/**
 		 * Reset current vector with vector values. Returns a new vector.
 		 *
-		 * @param vector
+		 * @param {Vector} vector
+		 * @return {Vector}
 		 */
 		reset (vector: Vector): Vector;
 
 
 		/**
 		 * Reset current vector to 0 (origin). Returns a new vector.
+		 *
+		 * @return {Vector}
 		 */
 		zero (): Vector;
 
@@ -396,20 +475,26 @@ export default class Vector
 		/**
 		 * Set current vector X et Y values. Returns a new vector.
 		 *
-		 * @param [x=0]
-		 * @param [y=0]
+		 * @param {number} [x = 0]
+		 * @param {number} [y = 0]
+		 * @return {Vector}
 		 */
-		set (x: number, y: number): Vector;
+		set (x?: number, y?: number): Vector;
 
 
 		/**
 		 * Returns a new vector copied from vector.
+		 *
+		 * @return {Vector}
+		 * @alias clone
 		 */
 		copy (): Vector;
 
 
 		/**
 		 * Returns a JSON representation of current vector.
+		 *
+		 * @return {number[]}
 		 */
 		toJSON (): number[];
 
@@ -417,128 +502,97 @@ export default class Vector
 		/**
 		 * Returns string representation of current vector.
 		 *
+		 * @param {Vector} vector
+		 * @return {string}
 		 */
 		toString (vector: Vector): string;
 
+
+		/**
+		 * Returns array representation of current vector.
+		 *
+		 * @return {number[]}
+		 */
+		toArray (): number[];
+
+
+		/**
+		 * Returns true if current vector equals vector.
+		 *
+		 * @param {Vector} vector
+		 * @return {boolean}
+		 */
+		equals (vector: Vector): boolean;
+
+
+		/**
+		 * Returns true if current and vector magnitude (length) are equal.
+		 *
+		 * @param {Vector} vector
+		 * @return {boolean}
+		 */
+		compare (vector: Vector): boolean;
+
+
+		/**
+		 * Uses the X value from current vector to create an new vector.
+		 *
+		 * @return {Vector}
+		 */
+		xx (): Vector;
+
+
+		/**
+		 * Uses the X value from vector to set current vector X and Y values.
+		 *
+		 * @param {Vector} vector
+		 */
+		xx (vector: Vector): void;
+
+
+		/**
+		 * Uses the Y value from current vector to create an new vector.
+		 *
+		 * @return {Vector}
+		 */
+		yy (): Vector;
+
+
+		/**
+		 * Uses the Y value from vector to set current vector X and Y values.
+		 *
+		 * @param {Vector} vector
+		 */
+		yy (vector: Vector): void;
+
+
+		/**
+		 * Uses the X and Y values from current vector to create an new vector.
+		 *
+		 * @return {Vector}
+		 */
+		xy (): Vector;
+
+		/**
+		 * Uses the X and Y values from vector to set current vector X and Y values.
+		 *
+		 * @param {Vector} vector
+		 */
+		xy (vector: Vector): void;
+
+
+		/**
+		 * Uses the Y and X values from current vector to create an new vector.
+		 *
+		 * @return {Vector}
+		 */
+		yx (): Vector;
+
+		
+		/**
+		 * Uses the Y and X values from vector to set current vector X and Y values.
+		 *
+		 * @param {Vector} vector
+		 */
+		yx (vector: Vector): void;
 	}
-
-/*
-
-
-	/!* istanbul ignore else *!/
-	if (typeof Symbol !== 'undefined' && Symbol.toStringTag) {
-		Vector$1.prototype[Symbol.toStringTag] = 'Vector';
-	}
-
-	Vector$1.toArray = function (vector) {
-		return vector.toArray()
-	};
-
-	Vector$1.prototype.toArray = function () {
-		return [this.x, this.y]
-	};
-
-	'use strict';
-	var numberEpsilon = 'EPSILON' in Number ? Number.EPSILON : 2.220446049250313e-16;
-
-	Vector$1.equals = function (one, another) {
-		return one.equals(another)
-	};
-
-	Vector$1.prototype.equals = function (vector) {
-		return (
-			Math.abs(this.x - vector.x) < numberEpsilon &&
-			Math.abs(this.y - vector.y) < numberEpsilon
-		)
-	};
-
-	Vector$1.compare = function (one, another) {
-		return one.compare(another)
-	};
-
-	Vector$1.prototype.compare = function (vector) {
-		var thisMagnitude = this.magnitude();
-		var vectorMagnitude = vector.magnitude();
-		return (thisMagnitude > vectorMagnitude) - (vectorMagnitude > thisMagnitude)
-	};
-
-	Object.defineProperties(Vector$1.prototype, {
-		xx: {
-			configurable: true,
-			get: function () {
-				return new Vector$1(this.x, this.x)
-			},
-			set: function (vector) {
-				this.x = vector.x;
-				this.y = vector.x;
-			}
-		},
-		xy: {
-			configurable: true,
-			get: function () {
-				return new Vector$1(this.x, this.y)
-			},
-			set: function (vector) {
-				this.x = vector.x;
-				this.y = vector.y;
-			}
-		},
-		yx: {
-			configurable: true,
-			get: function () {
-				return new Vector$1(this.y, this.x)
-			},
-			set: function (vector) {
-				this.x = vector.y;
-				this.y = vector.x;
-			}
-		},
-		yy: {
-			configurable: true,
-			get: function () {
-				return new Vector$1(this.y, this.y)
-			},
-			set: function (vector) {
-				this.x = vector.y;
-				this.y = vector.y;
-			}
-		}
-	});
-
-	function VectorIterator (vector) {
-		this.vector = vector;
-		this.__idx = 0;
-	}
-
-	VectorIterator.prototype.next = function () {
-		if (this.__idx === 0) {
-			this.__idx++;
-			return {
-				done: false,
-				value: this.vector.x
-			}
-		} else if (this.__idx === 1) {
-			this.__idx++;
-			return {
-				done: false,
-				value: this.vector.y
-			}
-		} else {
-			return {
-				done: true,
-				value: void 0
-			}
-		}
-	};
-
-	/!* istanbul ignore else *!/
-	if (typeof Symbol !== 'undefined' && Symbol.iterator) {
-		Vector$1.prototype[Symbol.iterator] = function iterator () {
-			return new VectorIterator(this)
-		};
-	}
-
-	return Vector$1;
-
-})));
-*/
